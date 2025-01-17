@@ -7,7 +7,7 @@ import Texto from './Texto'
 export default function EjGestos() {
   const [label, setLabel] = useState(null);
   // con esta función cambiamos el backgroundColor
-  const [backgroundColor, setBackgroundColor] = useState('pink');
+  const [nuevoBackgroundColor, setBackgroundColor] = useState('pink');
   
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
@@ -64,6 +64,7 @@ export default function EjGestos() {
         window.scrollBy(0, -window.innerHeight);
       } 
       else if (label === "point") {
+        console.log("point");
         // Llamamos a la función de manera que si el color está en rosa, cambiamos a azul
         // y si esta en azul cambiamos a rosa
         setBackgroundColor(prevColor => prevColor === 'pink' ? 'blue' : 'pink');
@@ -81,7 +82,7 @@ export default function EjGestos() {
         <div style = {{
           alignItems: 'center',
           display: 'flex',
-          backgroundColor: 'pink',
+          backgroundColor: nuevoBackgroundColor,
           flexDirection: 'column',
           }}>
             <div>
